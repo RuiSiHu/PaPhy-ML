@@ -4,7 +4,7 @@ import datetime
 import os
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Usage example: python PaPhy.py -f nucleotide.fas -a halign -t raxmlHPC -n")
+    parser = argparse.ArgumentParser(description="Usage example: python PaPhy.py -f test.fas -a halign -t raxmlHPC -n")
     parser.add_argument('-f', type=str, help="input a biological sequence file with FASTA format [required]", default="Influenza_A_virus_10.fas")
     parser.add_argument('-a', type=str, help="please select a multiple sequence alignment software [default = halign]",
                         default="halign", choices=["halign", "mafft"])
