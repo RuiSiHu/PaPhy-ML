@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 12 20:52:00 2022
-@author: Dr.Rui-Si Hu
+@author: Rui-Si Hu
 
 """
 import argparse
