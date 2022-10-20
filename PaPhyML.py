@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 12 20:52:00 2022
-@author: Rui-Si Hu
-
-"""
+# Author: Rease
 import argparse
 import datetime
 import os
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Usage example: python PaPhy.py -f test.fas -a halign -t raxmlHPC -n")
-    parser.add_argument('-f', type=str, help="input a biological sequence file with FASTA format [required]", default="Influenza_A_virus_10.fas")
-    parser.add_argument('-a', type=str, help="please select a multiple sequence alignment software [default = halign]",
-                        default="halign", choices=["halign", "mafft"])
-    parser.add_argument('-t', type=str, help="please select a phylogenetic tree software [default = raxml]",
+    parser = argparse.ArgumentParser(
+        description="Usage example: python PaPhyML.py -f test.fas -a mafft -t raxmlHPC -n")
+    parser.add_argument('-f', type=str, help="Add a biological sequence file with FASTA format [required]",
+                        default="test.fas")
+    parser.add_argument('-a', type=str, help="Select a multiple sequence alignment software [default=mafft]",
+                        default="mafft", choices=["mafft", "halign", "wmsa", "muscle"])
+    parser.add_argument('-t', type=str, help="Select a phylogenetic tree software [default = raxml]",
                         default="raxmlHPC", choices=["raxmlHPC", "phyml", "fasttree", "iqtree"])
-    parser.add_argument('-n', required=False, help="the input FASTA file is nucleotide sequence", action="store_true")
-    parser.add_argument('-p', required=False, help="the input FASTA file is protein sequence", action="store_true")
+    parser.add_argument('-n', required=False, help="The input FASTA file is nucleotide sequence", action="store_true")
+    parser.add_argument('-p', required=False, help="The input FASTA file is protein sequence", action="store_true")
+    args = parser.parse_args()
 
     final_output_folder = os.path.join(os.getcwd(), "output")
     if not os.path.exists(final_output_folder):
@@ -56,18 +55,35 @@ if __name__ == '__main__':
 
     ######################################step1######################################
     step_1_output_path = ""
-    if step_1_params == "halign":
+
+    if step_1_params == "mafft":
         step_1_output_path = os.path.join(final_output_folder, "seq_alignment.fasta")
-        step_1_command = step_1_params + " -o " + step_1_output_path + " " + data_file_path
-        step_1_return = os.popen(step_1_command, 'r', -1)
-        print("Step1 output:")
-        print(step_1_return.read())
-    elif step_1_params == "mafft":
-        step_1_output_path = os.path.join(final_output_folder, "seq_alignment.fasta")
-        step_1_command = step_1_params + " " + data_file_path + " > " + step_1_output_path
+        step_1_command = "mafft " + data_file_path + " > " + step_1_output_path
         step_1_return = os.popen(step_1_command)
         print("Step1 output:")
         print(step_1_return.read())
+
+    elif step_1_params == "halign":
+        step_1_output_path = os.path.join(final_output_folder, "seq_alignment.fasta")
+        step_1_command = "halign" + " -o " + step_1_output_path + " " + data_file_path
+        step_1_return = os.popen(step_1_command, 'r', -1)
+        print("Step1 output:")
+        print(step_1_return.read())
+
+    elif step_1_params == "wmsa":
+        step_1_output_path = os.path.join(final_output_folder, "seq_alignment.fasta")
+        step_1_command = "wmsa -i " + data_file_path + " -o " + step_1_output_path + " -T 2 -c 0.9"
+        step_1_return = os.popen(step_1_command, 'r', -1)
+        print("Step1 output:")
+        print(step_1_return.read())
+
+    elif step_1_params == "muscle":
+        step_1_output_path = os.path.join(final_output_folder, "seq_alignment.fasta")
+        step_1_command = "muscle -align " + data_file_path + " -output " + step_1_output_path
+        step_1_return = os.popen(step_1_command, 'r', -1)
+        print("Step1 output:")
+        print(step_1_return.read())
+        pass
     else:
         print("The param of Step1 is wrong!")
 
@@ -104,7 +120,7 @@ if __name__ == '__main__':
 
     ######################################step4######################################
     if not args.n and not args.p:
-        print("Either N or P has to be true")
+        print("Either N or P has to be selected")
 
     step_4_command = ""
     if step_4_params == "raxmlHPC":
