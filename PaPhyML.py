@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author: Rease
 # Update: October 20, 2022
 import argparse
 import datetime
