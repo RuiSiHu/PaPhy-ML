@@ -10,7 +10,7 @@ if __name__ == '__main__':
     parser.add_argument('-f', type=str, help="Add a biological sequence file with FASTA format [required]",
                         default="test.fas")
     parser.add_argument('-a', type=str, help="Select a multiple sequence alignment software [default=mafft]",
-                        default="halign", choices=["halign", "mafft", "wmsa", "muscle"])
+                        default="halign", choices=["mafft", "halign", "wmsa", "muscle"])
     parser.add_argument('-t', type=str, help="Select a phylogenetic tree software [default = raxml]",
                         default="raxmlHPC", choices=["raxmlHPC", "phyml", "fasttree", "iqtree"])
     parser.add_argument('-n', required=False, help="The input FASTA file is nucleotide sequence", action="store_true")
