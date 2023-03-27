@@ -5,7 +5,7 @@ Please use command "python PaPhyML.py -h" for help
 
 Usage example: python PaPhyML.py -f test.fas -a halign -t raxmlHPC -n
 
-References
+<!-- References -->
 
 [1]Capella-Gutierrez, S., Silla-Martinez, J.M. and Gabaldon, T. trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics 2009;25(15):1972-1973.
 
