@@ -8,12 +8,20 @@ Usage example: python PaPhyML.py -f test.fas -a halign -t raxmlHPC -n
 References
 
 Capella-Gutierrez, S., Silla-Martinez, J.M. and Gabaldon, T. trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics 2009;25(15):1972-1973.
+
 Edgar, R.C. MUSCLE v5 enables improved estimates of phylogenetic tree confidence by ensemble bootstrapping. BioRxiv 2021.
+
 Guindon, S., et al. New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0. Systematic biology 2010;59(3):307-321.
+
 Katoh, K. and Standley, D.M. MAFFT multiple sequence alignment software version 7: improvements in performance and usability. Mol Biol Evol 2013;30(4):772-780.
+
 Nguyen, L.T., et al. IQ-TREE: a fast and effective stochastic algorithm for estimating maximum-likelihood phylogenies. Mol Biol Evol 2015;32(1):268-274.
+
 Price, M.N., Dehal, P.S. and Arkin, A.P. FastTree 2--approximately maximum-likelihood trees for large alignments. PLoS One 2010;5(3):e9490.
+
 Stamatakis, A. RAxML version 8: a tool for phylogenetic analysis and post-analysis of large phylogenies. Bioinformatics 2014;30(9):1312-1313.
+
 Tang, F., et al. HAlign 3: Fast Multiple Alignment of Ultra-Large Numbers of Similar DNA/RNA Sequences. Mol Biol Evol 2022;39(8).
+
 Wei, Y., et al. WMSA: a novel method for multiple sequence alignment of DNA sequences. Bioinformatics 2022;38(22):5019-5025.
 
