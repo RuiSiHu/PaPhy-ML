@@ -3,7 +3,8 @@ PaPhy-ML uses MAFFT v7.508 (Katoh and Standley, 2013), HAlign v3.0.0_rc1 (Tang, 
 
 Please use command "python PaPhyML.py -h" for help
 
-Usage example: python PaPhyML.py -f test.fas -a halign -t raxmlHPC -n
+# Usage example
+python PaPhyML.py -f test.fas -a halign -t raxmlHPC -n
 
 # References
 
